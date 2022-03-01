@@ -35,5 +35,21 @@ const phoneDetails = (phoneId) =>{
 }
 
 const displayPhone = (mobil) =>{
-    console.log(mobil)
+    console.log(mobil.mainFeatures)  
+    const phoneDetail = document.getElementById('ph-detail');
+    const div = document.createElement('div')
+    div.innerHTML=`
+        <div class="card mx-auto" style="width: 18rem;">
+            <img src="${mobil.image}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4>${mobil.name}</h4>
+                <p>${mobil.releaseDate}</p>
+                <p>${mobil.mainFeatures.storage}</p>
+                <p>${mobil.mainFeatures.displaySize}</p>
+                <p>${mobil.mainFeatures.chipSet}</p>
+                <p>${mobil.mainFeatures.memory}</p>
+            </div>
+        </div>
+    `
+    phoneDetail.appendChild(div)
 }
