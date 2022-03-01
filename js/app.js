@@ -63,7 +63,7 @@ const displayPhone = (mobil) =>{
           <div class="col-md-8">
             <div class="card-body ps-5">
               <h5 class="card-title">${mobil.name}</h5>
-              <p class="card-text mb-1"><span class ="fw-bold">ReleaseDate : </span>${mobil.releaseDate}</p>
+              <p class="card-text mb-1"><span class ="fw-bold">ReleaseDate : </span>${mobil.releaseDate? mobil.releaseDate :'No release date found'} </p>
                 <p class="mb-1"><span class="fw-bold">MainFeatures</span></p>
                 <p class="mb-1"><span class ="fw-bold">Display : </span>${mobil.mainFeatures.displaySize}</p>
                 <p class="mb-1"><span class ="fw-bold">Storage : </span>${mobil.mainFeatures.storage}</p>
