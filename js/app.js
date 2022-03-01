@@ -3,19 +3,21 @@ const phoneDetail = document.getElementById('phone-detail');
 const searchPhone = () =>{
     const inputValue = document.getElementById('input-value');
     const inputText = inputValue.value
-    // Phone name API Calling 
+   
     inputValue.value = ''
-    
+     // Phone name API Calling 
     fetch(`https://openapi.programming-hero.com/api/phones?search=${inputText}`)
     .then(res => res.json())
     .then(data => displayPhones(data.data))
     phoneDetail.innerHTML = ''
+    // searchResult.innerHTML = ''
     
 }
 const displayPhones = (phones) =>{
     // console.log(phones)
     const searchResult = document.getElementById("search-result");
     const fast20Data = phones.slice(0,20);
+    searchResult.innerHTML = ''
     // console.log(fast20Data)
     fast20Data.forEach(phone =>{
         console.log(phone)
@@ -45,8 +47,7 @@ const phoneDetails = (phoneId) =>{
 }
     // Showing The Phone Information 
 const displayPhone = (mobil) =>{
-    console.log(mobil.mainFeatures.chipSet)  
-    // const phoneDetail = document.getElementById('ph-detail');
+    console.log(mobil.mainFeatures.chipSet)
     const div = document.createElement('div')
     phoneDetail.innerHTML = ''
     div.innerHTML=`
