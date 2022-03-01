@@ -1,9 +1,9 @@
 
 const phoneDetail = document.getElementById('phone-detail');
 const errorText = document.getElementById('error');
+
 const searchPhone = () =>{
     const inputValue = document.getElementById('input-value');
-    
     const inputText = inputValue.value
     inputValue.value = ''
 
@@ -24,7 +24,6 @@ const displayPhones = (phones) =>{
     searchResult.innerHTML = ''
     
     fast20Data.forEach(phone =>{
-        console.log(phone)
         const div = document.createElement('div')
         div.innerHTML = `
             <div class="col my-3 ">
@@ -46,12 +45,11 @@ const phoneDetails = (phoneId) =>{
     fetch(`https://openapi.programming-hero.com/api/phone/${phoneId}`)
     .then(res => res.json())
     .then(data => displayPhone(data.data))
-    
-    
+ 
 }
+
     // Showing The Phone Information 
 const displayPhone = (mobil) =>{
-    console.log(mobil.mainFeatures.chipSet)
     const div = document.createElement('div')
     phoneDetail.innerHTML = ''
     div.innerHTML=`
