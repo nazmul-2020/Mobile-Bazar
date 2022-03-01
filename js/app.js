@@ -2,9 +2,9 @@ const searchPhone = () =>{
     const inputValue = document.getElementById('input-value').value;
     fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
     .then(res => res.json())
-    .then(data => displayPhone(data.data))
+    .then(data => displayPhones(data.data))
 }
-const displayPhone = (phones) =>{
+const displayPhones = (phones) =>{
     // console.log(phones)
     const searchResult = document.getElementById("search-result");
     const fast20Data = phones.slice(0,20);
@@ -26,11 +26,14 @@ const displayPhone = (phones) =>{
         searchResult.appendChild(div)
     })
 }
-
-const phoneDetails = (info) =>{
-    // console.log(info)
-    fetch(`https://openapi.programming-hero.com/api/phone/${info}`)
+const phoneDetails = (phoneId) =>{
+    // console.log(phoneId)
+    fetch(`https://openapi.programming-hero.com/api/phone/${phoneId}`)
     .then(res => res.json())
-    .then(data => (data))
- 
+    .then(data => displayPhone(data.data))
+    
+}
+
+const displayPhone = (mobil) =>{
+    console.log(mobil)
 }
